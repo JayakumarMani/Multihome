@@ -1,0 +1,103 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:jee="http://www.springframework.org/schema/jee"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:sec="http://www.springframework.org/schema/security"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xsi:schemaLocation="http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/jee
+http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+<context:component-scan base-package="com.cl.services" />
+   
+   <context:component-scan base-package="com.crimsonlogic.service"/>
+   <context:component-scan base-package="com.crimsonlogic.service.web.controller"/>
+   <context:component-scan base-package="com.crimsonlogic.service.web.controller.exception"/>
+   <context:component-scan base-package="com.crimsonlogic.service.web.delegate"/>    
+    
+<mvc:annotation-driven />
+<tx:annotation-driven />
+
+<!-- <jee:jndi-lookup id="ds" jndi-name="java:/jboss/MySqlDS" resource-ref="true" /> -->
+
+
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/world" />
+		<property name="username" value="appuser" />
+		<property name="password" value="appuser" />
+</bean>
+	
+<bean id="simpleCORSFilter" class="com.cl.filters.SimpleCORSFilter" />	
+	
+<bean id="persistLog" class="com.cl.business.PersistLog" />
+
+
+<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	<property name="sessionFactory" ref="sessionFactory" />
+</bean>
+
+
+<bean id="sessionFactory"
+	class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	<property name="dataSource" ref="ds" />
+	<property name="mappingLocations">
+		<list>
+			<value>/WEB-INF/LogEntries.hbm.xml</value>
+		</list>
+	</property>
+	<property name="hibernateProperties"> 
+     		<ref bean="hibernateProperties"/>
+     	</property>
+</bean>
+ 	
+<bean id="hibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	<property name="properties">
+		<props>
+			<prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+			<prop key="hibernate.show_sql">true</prop>
+			<prop key="hibernate.format_sql">true</prop>
+			<prop key="hibernate.use_sql_comments">true</prop>
+			<prop key="hibernate.connection.release_mode">auto</prop>
+			<prop key="hibernate.connection.autocommit">false</prop>
+			<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+			<prop key="hibernate.cglib.use_reflection_optimizer">true</prop>
+			<prop key="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</prop>
+			<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+		</props>
+	</property>
+</bean>
+ 	
+ 	
+ 	
+ 	<!--  Authentication related entries below -->
+ 	
+
+<!-- 	<sec:http pattern="/logging/**" use-expressions="true" auto-config="false" create-session="stateless"  -->
+<!-- 		authentication-manager-ref="noOpAuthenticationManager" entry-point-ref="restAuthenticationEntryPoint"> -->
+<!-- 		<sec:csrf disabled="true"/> -->
+<!-- 		<sec:intercept-url pattern="/logging/**" access="isAuthenticated()"/> -->
+<!--     	<sec:custom-filter ref="tokenAuthFilter" position="FORM_LOGIN_FILTER"/> -->
+<!--     	<sec:access-denied-handler ref="restAuthenticationAccessDeniedHandler"/> -->
+<!--     	<sec:logout/> -->
+<!-- 	</sec:http> -->
+	
+	 	
+<!-- 	<bean id="tokenAuthFilter" class="com.crimsonlogic.service.auth.filter.TokenAuthenticationFilter" /> -->
+
+
+ 	
+</beans>

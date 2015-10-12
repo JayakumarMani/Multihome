@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="urn:crimsonlogic:schema:xsd:LogOutput" targetNamespace="urn:crimsonlogic:schema:xsd:LogOutput"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="LogOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:string" />
+				<xs:element name="description" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

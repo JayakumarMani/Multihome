@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html webdriver="true" class="no-js" lang="en"><!--<![endif]--><!-- BEGIN HEAD -->
+<head>
+
+    <style>
+        #xaxis .domain {
+            fill: none;
+            stroke: #000;
+        }
+
+        #xaxis text, #yaxis text {
+            font-size: 12px;
+        }
+    </style>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Crimsonlogic | Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="css/common/css.css" rel="stylesheet" type="text/css">
+    <link href="css/common/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/common/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/common/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/common/uniform.css" rel="stylesheet" type="text/css">
+    <link href="css/common/bootstrap-switch.css" rel="stylesheet" type="text/css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+    <link href="css/common/daterangepicker-bs3.css" rel="stylesheet" type="text/css">
+    <link href="css/common/fullcalendar.css" rel="stylesheet" type="text/css">
+    <link href="css/common/jqvmap.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE LEVEL PLUGIN STYLES -->
+    <!-- BEGIN PAGE STYLES -->
+    <link href="css/common/tasks.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="css/common/components.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="css/common/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/common/layout.css" rel="stylesheet" type="text/css">
+    <link href="css/common/darkblue.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="css/common/custom.css" rel="stylesheet" type="text/css">
+    <!-- END THEME STYLES -->
+    <link rel="stylesheet" type="text/css" href="css/assets/global/plugins/jquery-nestable/jquery.nestable.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/assets/global/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+    <link href="css/assets/admin/pages/css/flag-icon.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css\c3.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">.jqstooltip {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        visibility: hidden;
+        background: rgb(0, 0, 0) transparent;
+        background-color: rgba(0, 0, 0, 0.6);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+        color: white;
+        font: 10px arial, san serif;
+        text-align: left;
+        white-space: nowrap;
+        padding: 5px;
+        border: 1px solid white;
+        z-index: 10000;
+    }
+
+    .jqsfield {
+        color: white;
+        font: 10px arial, san serif;
+        text-align: left;
+    }</style>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid"
+      ng-app="tradenetapp">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            CrimsonLogic
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse">
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <i class="icon-bell"></i>
+					<span class="badge badge-default">
+					7 </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="external">
+                            <h3><span class="bold">12 pending</span> approval</h3>
+                            <a href="#">view all</a>
+                        </li>
+                        <li>
+                            <div style="position: relative; overflow: hidden; width: auto; height: 250px;"
+                                 class="slimScrollDiv">
+                                <ul data-initialized="1" class="dropdown-menu-list scroller"
+                                    style="height: 250px; overflow: hidden; width: auto;" data-handle-color="#637283">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">just now</span>
+									<span class="details">
+                                        <span class="badge badge-primary">P</span>
+                                        OD5C873647U </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">3 mins</span>
+									<span class="details">
+									<span class="badge badge-default">C</span>
+                                        CSE3827262T </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">10 mins</span>
+									<span class="details">
+									<span class="badge badge-danger">P</span>
+                                        TW5C938837H </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">14 hrs</span>
+									<span class="details">
+									<span class="badge badge-default">C</span>
+                                        CSE36252537U </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">2 days</span>
+									<span class="details">
+									<span class="badge badge-warning">Q</span>
+                                        TT5C736541E  </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">3 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-danger">
+									<i class="fa fa-bolt"></i>
+									</span>
+									A user IP blocked. </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">4 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-warning">
+									<i class="fa fa-bell-o"></i>
+									</span>
+									Storage Server #4 not responding dfdfdfd. </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">5 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-info">
+									<i class="fa fa-bullhorn"></i>
+									</span>
+									System Error. </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">9 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-danger">
+									<i class="fa fa-bolt"></i>
+									</span>
+									Storage server failed. </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div style="background: none repeat scroll 0% 0% rgb(99, 114, 131); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px 7px 7px 7px; z-index: 99; right: 1px;"
+                                     class="slimScrollBar"></div>
+                                <div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px 7px 7px 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"
+                                     class="slimScrollRail"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END NOTIFICATION DROPDOWN -->
+                <!-- BEGIN INBOX DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <i class="icon-envelope-open"></i>
+					<span class="badge badge-default">
+					4 </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="external">
+                            <h3>You have <span class="bold">7 New</span> Messages</h3>
+                            <a href="#">view
+                                all</a>
+                        </li>
+                        <li>
+                            <div style="position: relative; overflow: hidden; width: auto; height: 275px;"
+                                 class="slimScrollDiv">
+                                <ul data-initialized="1" class="dropdown-menu-list scroller"
+                                    style="height: 275px; overflow: hidden; width: auto;" data-handle-color="#637283">
+                                    <li>
+                                        <a href="#">
+
+									<span class="subject">
+									<span class="from">
+									UNION STEEL PTE LTD </span>
+									<span class="time">Just Now </span>
+									</span>
+									<span class="message">
+									Meeting Confirmed for Case CSE3736352U on 25Jul2015 </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+									<span class="subject">
+									<span class="from">
+									PNE PCB PTE LTD </span>
+									<span class="time">16 mins </span>
+									</span>
+									<span class="message">
+									Query Replied for Permit :: OD5C236673P </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+
+									<span class="subject">
+									<span class="from">
+									MACOLINE (S) PTE LTD </span>
+									<span class="time">2 hrs </span>
+									</span>
+									<span class="message">
+									Amended Request Raised for Permit :: OD5C836645Y  </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div style="background: none repeat scroll 0% 0% rgb(99, 114, 131); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px 7px 7px 7px; z-index: 99; right: 1px;"
+                                     class="slimScrollBar"></div>
+                                <div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px 7px 7px 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"
+                                     class="slimScrollRail"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END INBOX DROPDOWN -->
+                <!-- BEGIN TODO DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <i class="icon-calendar"></i>
+					<span class="badge badge-default">
+					3 </span>
+                    </a>
+                    <ul class="dropdown-menu extended tasks">
+                        <li class="external">
+                            <h3>You have <span class="bold">12 pending</span> tasks</h3>
+                            <a href="#">view
+                                all</a>
+                        </li>
+                        <li>
+                            <div style="position: relative; overflow: hidden; width: auto; height: 275px;"
+                                 class="slimScrollDiv">
+                                <ul data-initialized="1" class="dropdown-menu-list scroller"
+                                    style="height: 275px; overflow: hidden; width: auto;" data-handle-color="#637283">
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Permit Approval</span>
+									<span class="percent">30%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 40%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">40% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Case Approval</span>
+									<span class="percent">65%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 65%;" class="progress-bar progress-bar-danger"
+                                          aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">65% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Case Meeting</span>
+									<span class="percent">98%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 98%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">98% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Amendment Request Approval</span>
+									<span class="percent">10%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 10%;" class="progress-bar progress-bar-warning"
+                                          aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">10% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Web server upgrade</span>
+									<span class="percent">58%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58"
+                                          aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">58% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Mobile development</span>
+									<span class="percent">85%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 85%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">85% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">New UI release</span>
+									<span class="percent">38%</span>
+									</span>
+									<span class="progress progress-striped">
+									<span style="width: 38%;" class="progress-bar progress-bar-important"
+                                          aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">38% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div style="background: none repeat scroll 0% 0% rgb(99, 114, 131); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px 7px 7px 7px; z-index: 99; right: 1px;"
+                                     class="slimScrollBar"></div>
+                                <div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px 7px 7px 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"
+                                     class="slimScrollRail"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END TODO DROPDOWN -->
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <img alt="" class="img-circle" src="css/img/avatar3_small.jpg">
+					<span class="username username-hide-on-mobile">
+					Tan </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i> My Profile </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-calendar"></i> My Calendar </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
+							3 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
+							7 </span>
+                            </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-lock"></i> Lock Screen </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-key"></i> Log Out </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-quick-sidebar-toggler">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <i class="icon-logout"></i>
+                    </a>
+                </li>
+                <!-- END QUICK SIDEBAR TOGGLER -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar-wrapper">
+        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+        <div class="page-sidebar navbar-collapse collapse">
+            <!-- BEGIN SIDEBAR MENU -->
+            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                <li class="sidebar-toggler-wrapper">
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    <div class="sidebar-toggler">
+                    </div>
+                    <!-- END SIDEBAR TOGGLER BUTTON -->
+                </li>
+                <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+                <li class="sidebar-search-wrapper">
+                    <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                    <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+                    <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+                    <form class="sidebar-search " action="extra_search.html" method="POST">
+                        <a href="javascript:;" class="remove">
+                            <i class="icon-close"></i>
+                        </a>
+
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Search..." type="text">
+							<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+                        </div>
+                    </form>
+                    <!-- END RESPONSIVE QUICK SEARCH FORM -->
+                </li>
+                <li>
+                    <a href="home.web">
+                        <i class="icon-home"></i>
+                        <span class="title">Permits</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="start active open">
+                    <a href="riskAllDashboard.web">
+                        <i class="icon-note"></i>
+                        <span class="title">Risk DashBoard</span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="permitapproval.web">
+                        <i class="icon-user"></i>
+                        <span class="title">Permit Approval Task</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inspectionapproval.web">
+                        <i class="icon-magnifier-add"></i>
+                        <span class="title">Inspection Approval Task</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div style="min-height:1029px" class="page-content">
+            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Widget settings form goes here
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn blue">Save changes</button>
+                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <!-- BEGIN STYLE CUSTOMIZER -->
+            <div class="theme-panel hidden-xs hidden-sm">
+                <div class="toggler">
+                </div>
+                <div class="toggler-close">
+                </div>
+                <div class="theme-options">
+                    <div class="theme-option theme-colors clearfix">
+						<span>
+						THEME COLOR </span>
+                        <ul>
+                            <li class="color-default current tooltips" data-style="default" data-container="body"
+                                data-original-title="Default">
+                            </li>
+                            <li class="color-darkblue tooltips" data-style="darkblue" data-container="body"
+                                data-original-title="Dark Blue">
+                            </li>
+                            <li class="color-blue tooltips" data-style="blue" data-container="body"
+                                data-original-title="Blue">
+                            </li>
+                            <li class="color-grey tooltips" data-style="grey" data-container="body"
+                                data-original-title="Grey">
+                            </li>
+                            <li class="color-light tooltips" data-style="light" data-container="body"
+                                data-original-title="Light">
+                            </li>
+                            <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true"
+                                data-original-title="Light 2">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Theme Style </span>
+                        <select class="layout-style-option form-control input-sm">
+                            <option value="square" selected="selected">Square corners</option>
+                            <option value="rounded">Rounded corners</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Layout </span>
+                        <select class="layout-option form-control input-sm">
+                            <option value="fluid" selected="selected">Fluid</option>
+                            <option value="boxed">Boxed</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Header </span>
+                        <select class="page-header-option form-control input-sm">
+                            <option value="fixed" selected="selected">Fixed</option>
+                            <option value="default">Default</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Top Menu Dropdown</span>
+                        <select class="page-header-top-dropdown-style-option form-control input-sm">
+                            <option value="light" selected="selected">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Mode</span>
+                        <select class="sidebar-option form-control input-sm">
+                            <option value="fixed">Fixed</option>
+                            <option value="default" selected="selected">Default</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Menu </span>
+                        <select class="sidebar-menu-option form-control input-sm">
+                            <option value="accordion" selected="selected">Accordion</option>
+                            <option value="hover">Hover</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Style </span>
+                        <select class="sidebar-style-option form-control input-sm">
+                            <option value="default" selected="selected">Default</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Position </span>
+                        <select class="sidebar-pos-option form-control input-sm">
+                            <option value="left" selected="selected">Left</option>
+                            <option value="right">Right</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Footer </span>
+                        <select class="page-footer-option form-control input-sm">
+                            <option value="fixed">Fixed</option>
+                            <option value="default" selected="selected">Default</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- END STYLE CUSTOMIZER -->
+            <!-- BEGIN PAGE HEADER-->
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="home.web">Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">Risk Dashboard</a>
+                    </li>
+                </ul>
+                <div class="page-toolbar">
+                    <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default"
+                         data-container="body" data-placement="bottom"
+                         data-original-title="Change dashboard date range">
+                        <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block">May 17, 2015 - June 15, 2015</span>&nbsp;
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
+            </div>
+            <h3 class="page-title">
+                Risk Dashboard
+                <small>reports &amp; statistics</small>
+            </h3>
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN DASHBOARD STATS -->
+            <div class="row" ng-controller="riskpermitstatsctrl">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="dashboard-stat blue-madison">
+                        <div class="visual">
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                {{riskScoreStat}}
+                            </div>
+                            <div class="desc">
+                                Total Risk Score
+                            </div>
+                        </div>
+                        <a class="more" href="javascript:;">
+                            View more <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="dashboard-stat red-intense">
+                        <div class="visual">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                {{paScoreStat}}
+                            </div>
+                            <div class="desc">
+                                Predective Analysis
+                            </div>
+                        </div>
+                        <a class="more" href="javascript:;">
+                            View more <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="dashboard-stat green-haze">
+                        <div class="visual">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                {{adScoreStat}}
+                            </div>
+                            <div class="desc">
+                                Anomaly Detection
+                            </div>
+                        </div>
+                        <a class="more" href="javascript:;">
+                            View more <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="dashboard-stat purple-plum">
+                        <div class="visual">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                {{rbStat}}
+                            </div>
+                            <div class="desc">
+                                Rule Based Score
+                            </div>
+                        </div>
+                        <a class="more" href="javascript:;">
+                            View more <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END DASHBOARD STATS -->
+
+            <div class="clearfix">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="portlet light tasks-widget">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-external-link"></i>
+                                <span class="caption-subject font-blue-hoki bold uppercase">Permit Details</span>
+                            </div>
+                            <div class="actions">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                                        <input type="radio" name="options" class="toggle" id="option1">Next</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                        <input type="radio" name="options" class="toggle" id="option2">Previous</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="task-content">
+                                <div style="position: relative; overflow: hidden; width: auto; height: 305px;"
+                                     class="slimScrollDiv">
+                                    <div data-initialized="1" class="scroller"
+                                         style="height: 305px; overflow: hidden; width: auto;" data-always-visible="1"
+                                         data-rail-visible1="1">
+                                        <!-- START TASK LIST -->
+                                        <ul class="task-list" ng-controller="riskpermitdetailsctrl">
+                                            <li>
+                                                <div class="task-title">
+                                                    <span class="task-title-sp">Permit :: {{permitData.LAST_PERMIT_NO}} </span>
+                                                    <a href="#show_all_container" data-toggle="modal"
+                                                       style="text-decoration: none;">
+                                                        <span class="label label-sm label-default">Containers</span>
+                                                    </a>
+                                                    <a href="#show_all_invoices" data-toggle="modal"
+                                                       style="text-decoration: none;">
+                                                        <span class="label label-sm label-info">Invoices</span>
+                                                    </a>
+                                                    <a href="#show_all_docs" data-toggle="modal"
+                                                       style="text-decoration: none;">
+                                                        <i class="fa fa-briefcase fa-lg"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="task-config">
+                                                    <div class="task-config-btn btn-group">
+                                                        <a class="btn btn-xs default" href="javascript:;"
+                                                           data-toggle="dropdown" data-hover="dropdown"
+                                                           data-close-others="true">
+                                                            <i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
+                                                        </a>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <i class="fa fa-check"></i> Complete </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#show_edit_permit" data-toggle="modal">
+                                                                    <i class="fa fa-pencil"></i> Edit </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <i class="fa fa-trash-o"></i> Cancel </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="task-title">
+                                                    <span class="task-title-sp">Status ::
+                                                        <span class="label label-sm label-success"
+                                                              ng-show="permitData.LAST_APP_STAT == 'A'">Approved</span>
+                                                    <span class="label label-sm label-success"
+                                                          ng-show="permitData.LAST_APP_STAT == 'AA'">Approved</span>
+                                                    <span class="label label-sm label-danger"
+                                                          ng-show="permitData.LAST_APP_STAT == 'AP'">Pending Approval</span>
+                                                     <span class="label label-sm label-danger"
+                                                           ng-show="permitData.LAST_APP_STAT == 'R'">Rejected</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li ng-controller="riskpermitdetailsIEctrl">
+                                                <div class="task-title">
+                                                    <span class="task-title-sp">Importer/Exporter :: {{ieData.NAME}}</span>
+                                                    <a href="#importeraddress" data-toggle="modal"
+                                                       style="text-decoration: none;">
+                                                        <i class="fa fa-envelope-o fa-lg"></i>
+                                                    </a>
+                                                    <a href="#show_all_party" data-toggle="modal"
+                                                                                         style="text-decoration: none;">
+                                                        <i class="fa fa-users fa-lg"></i>
+                                                    </a>
+                                                    <i class="fa fa-link fa-lg"></i>
+                                                </div>
+                                                <div class="modal fade bs-modal-sm" id="importeraddress" tabindex="-1"
+                                                     role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-hidden="true"></button>
+                                                                <h4 class="modal-title"><i
+                                                                        class="fa fa-location-arrow fa-3x"></i> Address
+                                                                </h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                {{ieData.NAME}}
+                                                                <br>
+                                                                {{ieData.ADDRESS}}
+                                                                <br>
+                                                                {{ieData.CITY_NAME}}
+                                                                <br>
+                                                                {{ieData.COUNTRY_CODE}}
+                                                                <br>
+                                                                {{ieData.CONTACT_NO}}
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn default"
+                                                                        data-dismiss="modal">Close
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+                                            </li>
+                                            <li>
+                                            <div class="task-title">
+                                                <span class="task-title-sp">Total Item :: {{permitData.TOT_ITEM}}</span>
+                                                <a href="#show_view_items" data-toggle="modal"
+                                                   style="text-decoration: none;">
+                                                    <span class="label label-sm" style="background-color: #8876A8"><i class="fa fa-eye"></i>View</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                            <li>
+                                                <div class="task-title">
+                                                    <span class="task-title-sp">Total Gross Weight :: {{permitData.TOT_GROSS_WT}}  {{permitData.TOT_GROSS_WT_UOM}}</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="task-title">
+                                                    <span class="task-title-sp">Total Charges :: <i
+                                                            class="fa fa-usd"></i>{{permitData.TOT_CHARGE}}</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="task-title">
+                                                    <span class="task-title-sp">Customs Duty Amount :: <i
+                                                            class="fa fa-usd"></i>{{permitData.TOT_CUSTOMS_DUTY_AMT}}</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="task-title">
+                                                    <span class="task-title-sp">Excise Duty Amount :: <i
+                                                            class="fa fa-usd"></i>{{permitData.TOT_EXCISE_DUTY_AMT}}</span>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <!-- END START TASK LIST -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--div class="task-footer">
+                                <div class="btn-arrow-link pull-right">
+                                    <a href="javascript:;">See All Records</a>
+                                    <i class="icon-arrow-right"></i>
+                                </div>
+                            </div -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="caption-subject font-green-sharp bold uppercase">Risk Indicators</span>
+                                <span class="caption-helper"></span>
+                            </div>
+                            <!--<div class="actions">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                                    <input name="options" class="toggle" id="option1" type="radio">New</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                    <input name="options" class="toggle" id="option2" type="radio">Returning</label>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="portlet-body" style="height: 315px">
+                            <div style="display: block;" id="permit_statistics_content" class="display-none">
+                                <div style="padding: 0px; position: relative;" class="chart" ng-controller="riskpermitchartstatsctrl">
+                                    <div id="riskPermitStatPie">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PORTLET-->
+                </div>
+            </div>
+
+            <div class="clearfix">
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6" ng-controller="permitauditctrl">
+                    <!-- BEGIN SAMPLE TABLE PORTLET-->
+
+                    <div class="portlet light tasks-widget">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-history"></i>
+                                <span class="caption-subject font-red-sunglo bold uppercase">Permit History</span>
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse" data-original-title="" title="">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config" data-original-title=""
+                                   title="">
+                                </a>
+                                <a href="javascript:;" class="reload" data-original-title="" title="">
+                                </a>
+                                <a href="javascript:;" class="remove" data-original-title="" title="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body" style="height: 350px">
+                            <div class="table-scrollable">
+                                <table class="table table-striped table-bordered table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <i class="fa fa-briefcase"></i> Actions
+                                        </th>
+                                        <th class="hidden-xs">
+                                            <i class="fa fa-clock-o"></i> Started at
+                                        </th>
+                                        <th>
+                                            <i class="fa fa-clock-o"></i> Ended at
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Poll </a>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            {{permitAuditData.TRD_POLL_START_DTM}}
+                                        </td>
+                                        <td>
+                                            {{permitAuditData.TRD_POLL_END_DTM}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                EDI to XML </a>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            {{permitAuditData.EDI_XML_START_DTM}}
+                                        </td>
+                                        <td>
+                                            {{permitAuditData.EDI_XML_END_DTM}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                TN Host </a>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            {{permitAuditData.TN_HOST_START_DTM}}
+                                        </td>
+                                        <td>
+                                            {{permitAuditData.TN_HOST_END_DTM}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                TN Host DCS </a>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            {{permitAuditData.TN_HOST_DCS_START_DTM}}
+                                        </td>
+                                        <td>
+                                            {{permitAuditData.TN_HOST_DCS_END_DTM}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                TN Host PPS </a>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            {{permitAuditData.TN_HOST_PPS_START_DTM}}
+                                        </td>
+                                        <td>
+                                            {{permitAuditData.TN_HOST_PPS_END_DTM}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                TN Host CA Auto </a>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            {{permitAuditData.TN_CA_AUTO_START_DTM}}
+                                        </td>
+                                        <td>
+                                            {{permitAuditData.TN_CA_AUTO_END_DTM}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                TN Host PCS PCP </a>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            {{permitAuditData.TN_PCS_PCP_START_DTM}}
+                                        </td>
+                                        <td>
+                                            {{permitAuditData.TN_PCS_PCP_END_DTM}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="task-footer">
+                                <div class="btn-arrow-link pull-right">
+                                    <a href="#show_all_audit" data-toggle="modal"
+                                       style="text-decoration: none;">See All History</a>
+                                    <i class="icon-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="show_all_audit" class="modal fade" role="dialog" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                        <h4 class="modal-title"><i class="fa fa-barcode fa-lg" style="color: red"></i> Permit History</h4>
+                                    </div>
+                                    <div class="modal-body" ng-controller="permitcontainerctrl">
+                                        <div class="inbox-content" ng-show="containerListData.length">
+                                            <div class="table-scrollable">
+                                                <table class="table table-condensed table-striped table-bordered table-advance table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <i class="fa fa-briefcase"></i> Actions
+                                                        </th>
+                                                        <th class="hidden-xs">
+                                                            <i class="fa fa-clock-o"></i> Started at
+                                                        </th>
+                                                        <th>
+                                                            <i class="fa fa-clock-o"></i> Ended at
+                                                        </th>
+
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                Poll </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TRD_POLL_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TRD_POLL_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                EDI to XML </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.EDI_XML_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.EDI_XML_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_HOST_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_HOST_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host DCS </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_HOST_DCS_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_HOST_DCS_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host PPS </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_HOST_PPS_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_HOST_PPS_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host CA Auto </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_CA_AUTO_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_CA_AUTO_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host STK QRY REQ </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_STK_QRY_REQ_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_STK_QRY_REQ_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host STK QRY RET </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_STK_QRY_RET_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_STK_QRY_RET_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host STK UPD INSTR </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_STK_UPD_INSTR_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_STK_UPD_INSTR_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host SC CA AUTO </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_SC_CA_AUTO_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_SC_CA_AUTO_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Host SC CA ONLINE </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_SC_CA_ONLINE_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_SC_CA_ONLINE_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                TN Outbound </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.TN_HOST_OUT_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.TN_HOST_OUT_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                XML to EDI </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.XML_EDI_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.XML_EDI_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;">
+                                                                XML to XML </a>
+                                                        </td>
+                                                        <td class="hidden-xs">
+                                                            {{permitAuditData.XML_XML_ECUSTOMS_START_DTM}}
+                                                        </td>
+                                                        <td>
+                                                            {{permitAuditData.XML_XML_ECUSTOMS_END_DTM}}
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="inbox-content" ng-show="!containerListData.length">
+                                            <i class="fa fa-exclamation-triangle fa-lg" style="color: red"></i>  No Container Data Found for this permit.
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <!-- BEGIN SAMPLE TABLE PORTLET-->
+
+                    <div class="portlet light tasks-widget">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-bitbucket"></i>
+                                <span class="caption-subject font-purple-seance bold uppercase">Profile Hits</span>
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse" data-original-title="" title="">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config" data-original-title=""
+                                   title="">
+                                </a>
+                                <a href="javascript:;" class="reload" data-original-title="" title="">
+                                </a>
+                                <a href="javascript:;" class="remove" data-original-title="" title="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body" style="height: 350px">
+                            <div class="table-scrollable">
+                                <table class="table table-striped table-bordered table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <i class="fa fa-warning"></i> Profile
+                                        </th>
+                                        <th class="hidden-xs">
+                                            <i class="fa fa-gear"></i> Actions
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Total Gross Weight Mismatch </a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: red">
+                                            Scanning/Physical Inspection
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Prohibited HSCodes </a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: red">
+                                            Scanning/Physical Inspection
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Number of Items Mismatch </a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: red">
+                                            Scanning/Physical Inspection
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Total Duty Amount </a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: #dfba4a">
+                                            Document Verification
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Invoice - Term Type </a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: #dfba4a">
+                                            Document Verification
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Item - Number of Packages Mismatch </a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: red">
+                                            Scanning/Physical Inspection
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Container Type Mismatch</a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: red">
+                                            Scanning/Physical Inspection
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;">
+                                                Item Value Mismatch </a>
+                                        </td>
+                                        <td class="hidden-xs" style="color: red">
+                                            Scanning/Physical Inspection
+                                        </td>
+
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END CONTAINER -->
+
+            <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+            <!-- BEGIN CORE PLUGINS -->
+            <!--[if lt IE 9]>
+            <script src="../../assets/global/plugins/respond.min.js"></script>
+            <script src="../../assets/global/plugins/excanvas.min.js"></script>
+            <![endif]-->
+            <script src="js/common/jquery_013.js" type="text/javascript"></script>
+            <script src="js/common/jquery-migrate.js" type="text/javascript"></script>
+            <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+            <script src="js/common/jquery-ui.js" type="text/javascript"></script>
+            <script src="js/common/bootstrap.js" type="text/javascript"></script>
+            <script src="js/common/bootstrap-hover-dropdown.js" type="text/javascript"></script>
+            <script src="js/common/jquery_006.js" type="text/javascript"></script>
+            <script src="js/common/jquery_014.js" type="text/javascript"></script>
+            <script src="js/common/jquery_003.js" type="text/javascript"></script>
+            <script src="js/common/jquery.js" type="text/javascript"></script>
+            <script src="js/common/bootstrap-switch.js" type="text/javascript"></script>
+            <!-- END CORE PLUGINS -->
+            <!-- BEGIN PAGE LEVEL PLUGINS -->
+            <script src="js/common/jquery_002.js" type="text/javascript"></script>
+            <script src="js/common/jquery_011.js" type="text/javascript"></script>
+            <script src="js/common/jquery_017.js" type="text/javascript"></script>
+            <script src="js/common/jquery_015.js" type="text/javascript"></script>
+            <script src="js/common/jquery_010.js" type="text/javascript"></script>
+            <script src="js/common/jquery_018.js" type="text/javascript"></script>
+            <script src="js/common/jquery_016.js" type="text/javascript"></script>
+            <script src="js/common/jquery_012.js" type="text/javascript"></script>
+            <script src="js/common/jquery_005.js" type="text/javascript"></script>
+            <script src="js/common/jquery_007.js" type="text/javascript"></script>
+            <script src="js/common/moment.js" type="text/javascript"></script>
+            <script src="js/common/daterangepicker.js" type="text/javascript"></script>
+            <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
+            <script src="js/common/fullcalendar.js" type="text/javascript"></script>
+            <script src="js/common/jquery_009.js" type="text/javascript"></script>
+            <script src="js/common/jquery_004.js" type="text/javascript"></script>
+            <!-- END PAGE LEVEL PLUGINS -->
+            <!-- BEGIN PAGE LEVEL SCRIPTS -->
+            <script src="js/common/metronic.js" type="text/javascript"></script>
+            <script src="js/common/layout.js" type="text/javascript"></script>
+            <script src="js/common/quick-sidebar.js" type="text/javascript"></script>
+            <script src="js/common/demo.js" type="text/javascript"></script>
+            <script src="js/common/index.js" type="text/javascript"></script>
+            <script src="js/common/tasks.js" type="text/javascript"></script>
+            <!-- END PAGE LEVEL SCRIPTS -->
+
+            <script src="js/assets/global/plugins/jquery-nestable/jquery.nestable.js"></script>
+            <script src="js/assets/admin/pages/scripts/ui-nestable.js"></script>
+            <script src="js/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+
+
+            <script type="text/javascript" src="js/assets/global/plugins/select2/select2.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+            <script src="js/assets/admin/pages/scripts/table-managed.js"></script>
+            <script src="js/angular.min.js"></script>
+            <script src="js/angular.route.js"></script>
+            <script src="js/angular-ui-bootstrap.min.js"></script>
+            <script src="js/tradenet.js"></script>
+
+            <script src="js/c3.js" type="text/javascript"></script>
+            <script src="js/d3.min.js" type="text/javascript"></script>
+
+            <script>
+                jQuery(document).ready(function () {
+                    Metronic.init(); // init metronic core componets
+                    Layout.init(); // init layout
+                    QuickSidebar.init(); // init quick sidebar
+                    Demo.init(); // init demo features
+                    Index.init();
+                    Index.initDashboardDaterange();
+                    Index.initJQVMAP(); // init index page's custom scripts
+                    Index.initCalendar(); // init index page's custom scripts
+                    Index.initCharts(); // init index page's custom scripts
+                    Index.initChat();
+                    Index.initMiniCharts();
+                    Tasks.initDashboardWidget();
+                });
+            </script>
+            <!-- END JAVASCRIPTS -->
+
+
+            <div style="top: 83px; right: 20px; left: auto;"
+                 class="daterangepicker dropdown-menu opensleft show-calendar">
+                <div class="calendar left">
+                    <div class="calendar-date">
+                        <table class="table-condensed">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th class="prev available"><i class="fa fa-angle-left"></i></th>
+                                <th colspan="5" class="month">May 2015</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th class="week">W</th>
+                                <th>Mo</th>
+                                <th>Tu</th>
+                                <th>We</th>
+                                <th>Th</th>
+                                <th>Fr</th>
+                                <th>Sa</th>
+                                <th>Su</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="week">18</td>
+                                <td class="off disabled" data-title="r0c0">27</td>
+                                <td class="off disabled" data-title="r0c1">28</td>
+                                <td class="off disabled" data-title="r0c2">29</td>
+                                <td class="off disabled" data-title="r0c3">30</td>
+                                <td class="off disabled" data-title="r0c4">1</td>
+                                <td class="off disabled" data-title="r0c5">2</td>
+                                <td class="off disabled" data-title="r0c6">3</td>
+                            </tr>
+                            <tr>
+                                <td class="week">19</td>
+                                <td class="off disabled" data-title="r1c0">4</td>
+                                <td class="off disabled" data-title="r1c1">5</td>
+                                <td class="off disabled" data-title="r1c2">6</td>
+                                <td class="off disabled" data-title="r1c3">7</td>
+                                <td class="off disabled" data-title="r1c4">8</td>
+                                <td class="off disabled" data-title="r1c5">9</td>
+                                <td class="off disabled" data-title="r1c6">10</td>
+                            </tr>
+                            <tr>
+                                <td class="week">20</td>
+                                <td class="off disabled" data-title="r2c0">11</td>
+                                <td class="off disabled" data-title="r2c1">12</td>
+                                <td class="off disabled" data-title="r2c2">13</td>
+                                <td class="off disabled" data-title="r2c3">14</td>
+                                <td class="off disabled" data-title="r2c4">15</td>
+                                <td class="off disabled" data-title="r2c5">16</td>
+                                <td class="off disabled" data-title="r2c6">17</td>
+                            </tr>
+                            <tr>
+                                <td class="week">21</td>
+                                <td class="off disabled" data-title="r3c0">18</td>
+                                <td class="off disabled" data-title="r3c1">19</td>
+                                <td class="off disabled" data-title="r3c2">20</td>
+                                <td class="off disabled" data-title="r3c3">21</td>
+                                <td class="off disabled" data-title="r3c4">22</td>
+                                <td class="off disabled" data-title="r3c5">23</td>
+                                <td class="off disabled" data-title="r3c6">24</td>
+                            </tr>
+                            <tr>
+                                <td class="week">22</td>
+                                <td class="off disabled" data-title="r4c0">25</td>
+                                <td class="off disabled" data-title="r4c1">26</td>
+                                <td class="off disabled" data-title="r4c2">27</td>
+                                <td class="off disabled" data-title="r4c3">28</td>
+                                <td class="off disabled" data-title="r4c4">29</td>
+                                <td class="off disabled" data-title="r4c5">30</td>
+                                <td class="off disabled" data-title="r4c6">31</td>
+                            </tr>
+                            <tr>
+                                <td class="week">23</td>
+                                <td class="off disabled" data-title="r5c0">1</td>
+                                <td class="off disabled" data-title="r5c1">2</td>
+                                <td class="off disabled" data-title="r5c2">3</td>
+                                <td class="off disabled" data-title="r5c3">4</td>
+                                <td class="off disabled" data-title="r5c4">5</td>
+                                <td class="off disabled" data-title="r5c5">6</td>
+                                <td class="off disabled" data-title="r5c6">7</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+
+
+            <div id="show_view_items" class="modal fade bs-modal-lg" role="dialog" style="display: none;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title"><i class="fa fa-cogs fa-lg" style="color: #80a4f5"></i> Items</h4>
+                        </div>
+                        <div class="modal-body" ng-controller="permitItemsListctrl">
+                            <div class="inbox-content">
+                                <table class="table table-condensed table-striped table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            HSCode
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Origin
+                                        </th>
+                                        <th>
+                                            Quantity
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr class="unread" ng-repeat="item in itemsListData">
+                                        <td>
+                                            <span style="color: purple">{{item.HS_CODE}}</span>
+                                        </td>
+                                        <td>
+                                            {{item.ITEM_DESC}}
+                                        </td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-{{ item.CTY_ORIGIN | lowercase}}"></span>
+                                        </td>
+                                        <td class="view-message ">
+                                            {{item.HS_QTY}} {{HS_UOM}}
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="show_all_party" class="modal fade" role="dialog" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title"><i class="fa fa-users fa-lg" style="color: #B5821E"></i> Parties</h4>
+                        </div>
+                        <div class="modal-body" ng-controller="permitallpartyctrl">
+                            <div class="inbox-content">
+                                <table class="table table-condensed table-striped table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            Agent Code
+                                        </th>
+                                        <th>
+                                            EI
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr class="unread" ng-repeat="party in allPartyData">
+                                        <td>
+                                            <span style="color: purple">{{party.AGENT_CODE}}</span>
+                                        </td>
+                                        <td>
+                                            {{party.PARTY_EI}}
+                                        </td>
+                                        <td class="view-message ">
+                                            {{party.NAME}}
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="show_all_container" class="modal fade" role="dialog" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title"><i class="fa fa-barcode fa-lg" style="color: red"></i> Containers</h4>
+                        </div>
+                        <div class="modal-body" ng-controller="permitcontainerctrl">
+                            <div class="inbox-content" ng-show="containerListData.length">
+                                <table class="table table-condensed table-striped table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            Container No
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                        <th>
+                                            Weight
+                                        </th>
+                                        <th>
+                                            Seal No
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr class="unread" ng-repeat="container in containerListData">
+                                        <td>
+                                            <span style="color: purple">{{container.CTN_NO}}</span>
+                                        </td>
+                                        <td>
+                                            {{container.CTN_TYPE_SIZE}}
+                                        </td>
+                                        <td>
+                                            {{container.CTN_WT_VALUE}}
+                                        </td>
+                                        <td>
+                                            {{container.CTN_SEAL_NO}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="inbox-content" ng-show="!containerListData.length">
+                                <i class="fa fa-exclamation-triangle fa-lg" style="color: red"></i>  No Container Data Found for this permit.
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="show_all_invoices" class="modal fade" role="dialog" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title"><i class="fa fa-file-text-o fa-lg" style="color: #B073DF"></i> Invoices</h4>
+                        </div>
+                        <div class="modal-body" ng-controller="permitinvoicectrl">
+                            <div class="inbox-content" ng-show="invoiceListData.length">
+                                <table class="table table-condensed table-striped table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            Invoice No
+                                        </th>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Amount
+                                        </th>
+                                        <th>
+                                            Seal No
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr class="unread" ng-repeat="invoice in invoiceListData">
+                                        <td>
+                                            <span style="color: purple">{{container.CTN_NO}}</span>
+                                        </td>
+                                        <td>
+                                            {{invoice.INV_NO}}
+                                        </td>
+                                        <td>
+                                            {{invoice.INV_DATE}}
+                                        </td>
+                                        <td>
+                                            {{invoice.TOT_INV_AMT}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="inbox-content" ng-show="!invoiceListData.length">
+                                <i class="fa fa-exclamation-triangle fa-lg" style="color: red"></i>  No Invoice Data Found for this permit.
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="show_all_docs" class="modal fade" role="dialog" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title"><i class="fa fa-briefcase fa-lg" style="color: #0278B5"></i> Supporting Documents</h4>
+                        </div>
+                        <div class="modal-body" ng-controller="permitsupdocctrl">
+                            <div class="inbox-content" ng-show="supdocListData.length">
+                                <table class="table table-condensed table-striped table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            DMS ID
+                                        </th>
+                                        <th>
+                                            Document
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr class="unread" ng-repeat="supDoc in supdocListData">
+                                        <td>
+                                            <span style="color: purple">{{supDoc.DMS_IS}}</span>
+                                        </td>
+                                        <td>
+                                            {{supDoc.SUP_DOC_PATH}}
+                                        </td>
+                                        <td>
+                                            {{supDoc.DESCRIPTION}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="inbox-content" ng-show="!supdocListData.length">
+                                <i class="fa fa-exclamation-triangle fa-lg" style="color: red"></i>  No Supporting Document Found for this permit.
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+</body>
+<!-- END BODY --></html>

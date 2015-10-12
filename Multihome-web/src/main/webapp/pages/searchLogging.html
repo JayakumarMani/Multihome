@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html webdriver="true" class="no-js" lang="en"><!--<![endif]--><!-- BEGIN HEAD -->
+<head>
+
+    <style>
+        #xaxis .domain {
+            fill: none;
+            stroke: #000;
+        }
+
+        #xaxis text, #yaxis text {
+            font-size: 12px;
+        }
+    </style>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Crimsonlogic | Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="css/common/css.css" rel="stylesheet" type="text/css">
+    <link href="css/common/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/common/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/common/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/common/uniform.css" rel="stylesheet" type="text/css">
+    <link href="css/common/bootstrap-switch.css" rel="stylesheet" type="text/css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+    <link href="css/common/daterangepicker-bs3.css" rel="stylesheet" type="text/css">
+    <link href="css/common/fullcalendar.css" rel="stylesheet" type="text/css">
+    <link href="css/common/jqvmap.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE LEVEL PLUGIN STYLES -->
+    <!-- BEGIN PAGE STYLES -->
+    <link href="css/common/tasks.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="css/common/components.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="css/common/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/common/layout.css" rel="stylesheet" type="text/css">
+    <link href="css/common/darkblue.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="css/common/custom.css" rel="stylesheet" type="text/css">
+    <!-- END THEME STYLES -->
+    <link rel="stylesheet" type="text/css" href="css/assets/global/plugins/jquery-nestable/jquery.nestable.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/assets/global/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+
+    <link href="css\c3.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">.jqstooltip {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        visibility: hidden;
+        background: rgb(0, 0, 0) transparent;
+        background-color: rgba(0, 0, 0, 0.6);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+        color: white;
+        font: 10px arial, san serif;
+        text-align: left;
+        white-space: nowrap;
+        padding: 5px;
+        border: 1px solid white;
+        z-index: 10000;
+    }
+
+    .jqsfield {
+        color: white;
+        font: 10px arial, san serif;
+        text-align: left;
+    }</style>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid"
+      ng-app="tradenetapp">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            CrimsonLogic
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse">
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <i class="icon-bell"></i>
+					<span class="badge badge-default">
+					7 </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="external">
+                            <h3><span class="bold">12 pending</span> approval</h3>
+                            <a href="#">view all</a>
+                        </li>
+                        <li>
+                            <div style="position: relative; overflow: hidden; width: auto; height: 250px;"
+                                 class="slimScrollDiv">
+                                <ul data-initialized="1" class="dropdown-menu-list scroller"
+                                    style="height: 250px; overflow: hidden; width: auto;" data-handle-color="#637283">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">just now</span>
+									<span class="details">
+                                        <span class="badge badge-primary">P</span>
+                                        OD5C873647U </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">3 mins</span>
+									<span class="details">
+									<span class="badge badge-default">C</span>
+                                        CSE3827262T </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">10 mins</span>
+									<span class="details">
+									<span class="badge badge-danger">P</span>
+                                        TW5C938837H </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">14 hrs</span>
+									<span class="details">
+									<span class="badge badge-default">C</span>
+                                        CSE36252537U </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">2 days</span>
+									<span class="details">
+									<span class="badge badge-warning">Q</span>
+                                        TT5C736541E  </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">3 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-danger">
+									<i class="fa fa-bolt"></i>
+									</span>
+									A user IP blocked. </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">4 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-warning">
+									<i class="fa fa-bell-o"></i>
+									</span>
+									Storage Server #4 not responding dfdfdfd. </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">5 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-info">
+									<i class="fa fa-bullhorn"></i>
+									</span>
+									System Error. </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="time">9 days</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-danger">
+									<i class="fa fa-bolt"></i>
+									</span>
+									Storage server failed. </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div style="background: none repeat scroll 0% 0% rgb(99, 114, 131); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px 7px 7px 7px; z-index: 99; right: 1px;"
+                                     class="slimScrollBar"></div>
+                                <div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px 7px 7px 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"
+                                     class="slimScrollRail"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END NOTIFICATION DROPDOWN -->
+                <!-- BEGIN INBOX DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <i class="icon-envelope-open"></i>
+					<span class="badge badge-default">
+					4 </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="external">
+                            <h3>You have <span class="bold">7 New</span> Messages</h3>
+                            <a href="#">view
+                                all</a>
+                        </li>
+                        <li>
+                            <div style="position: relative; overflow: hidden; width: auto; height: 275px;"
+                                 class="slimScrollDiv">
+                                <ul data-initialized="1" class="dropdown-menu-list scroller"
+                                    style="height: 275px; overflow: hidden; width: auto;" data-handle-color="#637283">
+                                    <li>
+                                        <a href="#">
+
+									<span class="subject">
+									<span class="from">
+									UNION STEEL PTE LTD </span>
+									<span class="time">Just Now </span>
+									</span>
+									<span class="message">
+									Meeting Confirmed for Case CSE3736352U on 25Jul2015 </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+									<span class="subject">
+									<span class="from">
+									PNE PCB PTE LTD </span>
+									<span class="time">16 mins </span>
+									</span>
+									<span class="message">
+									Query Replied for Permit :: OD5C236673P </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+
+									<span class="subject">
+									<span class="from">
+									MACOLINE (S) PTE LTD </span>
+									<span class="time">2 hrs </span>
+									</span>
+									<span class="message">
+									Amended Request Raised for Permit :: OD5C836645Y  </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div style="background: none repeat scroll 0% 0% rgb(99, 114, 131); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px 7px 7px 7px; z-index: 99; right: 1px;"
+                                     class="slimScrollBar"></div>
+                                <div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px 7px 7px 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"
+                                     class="slimScrollRail"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END INBOX DROPDOWN -->
+                <!-- BEGIN TODO DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <i class="icon-calendar"></i>
+					<span class="badge badge-default">
+					3 </span>
+                    </a>
+                    <ul class="dropdown-menu extended tasks">
+                        <li class="external">
+                            <h3>You have <span class="bold">12 pending</span> tasks</h3>
+                            <a href="#">view
+                                all</a>
+                        </li>
+                        <li>
+                            <div style="position: relative; overflow: hidden; width: auto; height: 275px;"
+                                 class="slimScrollDiv">
+                                <ul data-initialized="1" class="dropdown-menu-list scroller"
+                                    style="height: 275px; overflow: hidden; width: auto;" data-handle-color="#637283">
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Permit Approval</span>
+									<span class="percent">30%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 40%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">40% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Case Approval</span>
+									<span class="percent">65%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 65%;" class="progress-bar progress-bar-danger"
+                                          aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">65% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Case Meeting</span>
+									<span class="percent">98%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 98%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">98% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Amendment Request Approval</span>
+									<span class="percent">10%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 10%;" class="progress-bar progress-bar-warning"
+                                          aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">10% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Web server upgrade</span>
+									<span class="percent">58%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58"
+                                          aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">58% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">Mobile development</span>
+									<span class="percent">85%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 85%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">85% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+									<span class="task">
+									<span class="desc">New UI release</span>
+									<span class="percent">38%</span>
+									</span>
+									<span class="progress progress-striped">
+									<span style="width: 38%;" class="progress-bar progress-bar-important"
+                                          aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">38% Complete</span></span>
+									</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div style="background: none repeat scroll 0% 0% rgb(99, 114, 131); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px 7px 7px 7px; z-index: 99; right: 1px;"
+                                     class="slimScrollBar"></div>
+                                <div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px 7px 7px 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"
+                                     class="slimScrollRail"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END TODO DROPDOWN -->
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <img alt="" class="img-circle" src="css/img/avatar3_small.jpg">
+					<span class="username username-hide-on-mobile">
+					Tan </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i> My Profile </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-calendar"></i> My Calendar </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
+							3 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
+							7 </span>
+                            </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-lock"></i> Lock Screen </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-key"></i> Log Out </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-quick-sidebar-toggler">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <i class="icon-logout"></i>
+                    </a>
+                </li>
+                <!-- END QUICK SIDEBAR TOGGLER -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar-wrapper">
+        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+        <div class="page-sidebar navbar-collapse collapse">
+            <!-- BEGIN SIDEBAR MENU -->
+            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                <li class="sidebar-toggler-wrapper">
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    <div class="sidebar-toggler">
+                    </div>
+                    <!-- END SIDEBAR TOGGLER BUTTON -->
+                </li>
+                <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+                <li class="sidebar-search-wrapper">
+                    <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                    <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+                    <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+                    <form class="sidebar-search " action="extra_search.html" method="POST">
+                        <a href="javascript:;" class="remove">
+                            <i class="icon-close"></i>
+                        </a>
+
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Search..." type="text">
+							<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+                        </div>
+                    </form>
+                    <!-- END RESPONSIVE QUICK SEARCH FORM -->
+                </li>
+                <!--<li class="start active open">
+                    <a href="javascript:;">
+                        <i class="icon-home"></i>
+                        <span class="title">Permits</span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="riskAllDashboard.web">
+                        <i class="icon-note"></i>
+                        <span class="title">Risk DashBoard</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="permitapproval.web">
+                        <i class="icon-user"></i>
+                        <span class="title">Permit Approval Task</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inspectionapproval.web">
+                        <i class="icon-magnifier-add"></i>
+                        <span class="title">Inspection Approval Task</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>-->
+                <li>
+                    <a href="loghome.web">
+                        <i class="icon-home"></i>
+                        <span class="title">Home</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="createlogging.web">
+                        <i class="fa fa-wrench"></i>
+                        <span class="title">Create Logging</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="start active open">
+                    <a href="searchlogging.web">
+                        <i class="icon-magnifier-add"></i>
+                        <span class="title">Search Logging</span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="purgelogging.web">
+                        <i class="fa fa-trash-o"></i>
+                        <span class="title">Purge Logging</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+
+
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div style="min-height:1029px" class="page-content">
+            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Widget settings form goes here
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn blue">Save changes</button>
+                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <!-- BEGIN STYLE CUSTOMIZER -->
+            <div class="theme-panel hidden-xs hidden-sm">
+                <div class="toggler">
+                </div>
+                <div class="toggler-close">
+                </div>
+                <div class="theme-options">
+                    <div class="theme-option theme-colors clearfix">
+						<span>
+						THEME COLOR </span>
+                        <ul>
+                            <li class="color-default current tooltips" data-style="default" data-container="body"
+                                data-original-title="Default">
+                            </li>
+                            <li class="color-darkblue tooltips" data-style="darkblue" data-container="body"
+                                data-original-title="Dark Blue">
+                            </li>
+                            <li class="color-blue tooltips" data-style="blue" data-container="body"
+                                data-original-title="Blue">
+                            </li>
+                            <li class="color-grey tooltips" data-style="grey" data-container="body"
+                                data-original-title="Grey">
+                            </li>
+                            <li class="color-light tooltips" data-style="light" data-container="body"
+                                data-original-title="Light">
+                            </li>
+                            <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true"
+                                data-original-title="Light 2">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Theme Style </span>
+                        <select class="layout-style-option form-control input-sm">
+                            <option value="square" selected="selected">Square corners</option>
+                            <option value="rounded">Rounded corners</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Layout </span>
+                        <select class="layout-option form-control input-sm">
+                            <option value="fluid" selected="selected">Fluid</option>
+                            <option value="boxed">Boxed</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Header </span>
+                        <select class="page-header-option form-control input-sm">
+                            <option value="fixed" selected="selected">Fixed</option>
+                            <option value="default">Default</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Top Menu Dropdown</span>
+                        <select class="page-header-top-dropdown-style-option form-control input-sm">
+                            <option value="light" selected="selected">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Mode</span>
+                        <select class="sidebar-option form-control input-sm">
+                            <option value="fixed">Fixed</option>
+                            <option value="default" selected="selected">Default</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Menu </span>
+                        <select class="sidebar-menu-option form-control input-sm">
+                            <option value="accordion" selected="selected">Accordion</option>
+                            <option value="hover">Hover</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Style </span>
+                        <select class="sidebar-style-option form-control input-sm">
+                            <option value="default" selected="selected">Default</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Sidebar Position </span>
+                        <select class="sidebar-pos-option form-control input-sm">
+                            <option value="left" selected="selected">Left</option>
+                            <option value="right">Right</option>
+                        </select>
+                    </div>
+                    <div class="theme-option">
+						<span>
+						Footer </span>
+                        <select class="page-footer-option form-control input-sm">
+                            <option value="fixed">Fixed</option>
+                            <option value="default" selected="selected">Default</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- END STYLE CUSTOMIZER -->
+            <!-- BEGIN PAGE HEADER-->
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="loghome.web">Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">Search Logging</a>
+                    </li>
+
+                </ul>
+                <div class="page-toolbar">
+                    <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default"
+                         data-container="body" data-placement="bottom"
+                         data-original-title="Change dashboard date range">
+                        <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block">May 17, 2015 - June 15, 2015</span>&nbsp;
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
+            </div>
+            <h3 class="page-title">
+                Search Logging
+            </h3>
+            <!-- END PAGE HEADER-->
+
+
+            <div class="clearfix">
+            </div>
+
+            <div class="row" ng-controller="searchLoggingCtrl">
+                <div class="col-md-12 col-sm-12">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-body">
+                            <div class="form-group col-md-12">
+                                <label class="col-md-3 control-label">Application</label>
+
+                                <div class="col-md-3">
+                                    <select class="form-control" ng-model="loggingData.appId">
+                                        <option ng-repeat="application in applicationList"
+                                                value="{{application.APP_ID}}">{{application.APP_DESC}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <label class="col-md-3 control-label">Module</label>
+
+                                <div class="col-md-3">
+                                    <!--<select class="form-control" ng-model="loggingData.moduleName">
+                                        <option ng-repeat="logmodule in moduleList" value="{{logmodule.MODULE_DESC}}">
+                                            {{logmodule.MODULE_DESC}}
+                                        </option>
+                                    </select> -->
+                                    <input type="text" class="form-control" ng-model="loggingData.moduleName">
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="col-md-3 control-label">Function</label>
+
+                                <div class="col-md-3">
+                                    <!--<select class="form-control" ng-model="loggingData.functionName">
+                                        <option ng-repeat="function in functionList" value="{{function.FUNCTION_DESC}}">
+                                            {{function.FUNCTION_DESC}}
+                                        </option>
+                                    </select>-->
+                                    <input type="text" class="form-control" ng-model="loggingData.functionName">
+                                </div>
+
+
+                                <label class="col-md-3 control-label">Log Level</label>
+
+                                <div class="col-md-3">
+                                    <select class="form-control" ng-model="loggingData.logLevel">
+                                        <option ng-repeat="logLevel in logLevelList" value="{{logLevel.LOG_LEVEL_ID}}">
+                                            {{logLevel.LOG_LEVEL_DESC}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group col-md-12">
+                                <label class="col-md-3 control-label">Transaction Id</label>
+
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" ng-model="loggingData.transactionRefId">
+                                </div>
+
+                                <label class="col-md-3 control-label">Sub Transaction Id</label>
+
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" ng-model="loggingData.subTransactionId"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-4 col-md-8">
+                                    <button data-dismiss="modal" aria-hidden="true" class="btn default"
+                                            ng-click="cancel()">
+                                        Cancel
+                                    </button>
+                                    <button type="search" class="btn blue" ng-click="searchLogging(loggingData)">Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div style="height: 20px">
+                    </div>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>
+                                App Id
+                            </th>
+                            <th>
+                                Module
+                            </th>
+                            <th>
+                                Function
+                            </th>
+                            <th>
+                                Log Level
+                            </th>
+                            <th>
+                                Transaction ID
+                            </th>
+                            <th>
+                                Log Date
+                            </th>
+                            <th>
+                                <a href="#" ng-click="pdfLogging(loggingData)">
+                                    <i class="fa fa-file-pdf-o" style="height: 15px; width: 15px; color: red"></i>
+                                </a>
+                                <a href="#" ng-click="excelLogging(loggingData)">
+                                    <i class="fa fa-file-excel-o" style="height: 15px; width: 15px; color: green"></i>
+                                </a>
+                                <a href="#" ng-click="printLogging(loggingData)">
+                                    <i class="fa fa-print" style="height: 15px; width: 15px; color: darkorchid"></i>
+                                </a>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="logData in logDataList">
+                            <td>
+                                {{logData.APP_DESC}}
+                            </td>
+                            <td>
+                                {{logData.module_name}}
+                            </td>
+                            <td>
+                                {{logData.function_name}}
+                            </td>
+                            <td>
+                                {{logData.LOG_LEVEL_DESC}}
+                            </td>
+                            <td>
+                                {{logData.transaction_ref_id}}
+                            </td>
+                            <td>
+                                {{logData.log_datetime | date:'dd/MM/yyyy HH:mm:ss' }}
+                            </td>
+
+                            <td>
+                                <a href="#" data-toggle="modal"
+                                   style="text-decoration: none;" class="btn default btn-xs purple"
+                                   ng-click="getSelectedLogData(logData);open();">
+                                    <i class="fa fa-cog fa-spin"></i> View
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="modal-dialog modal-lg">
+                        <script type="text/ng-template" id="logDetailsDataPopup.html">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" aria-hidden="true" ng-click="cancel()"></button>
+                                    <h4 class="modal-title"><i class="fa fa-barcode fa-lg"
+                                                               style="color: red; background-color: "></i> Log
+                                        Details</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Application</label>
+
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.APP_DESC" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Module</label>
+
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.module_name" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Function</label>
+
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.function_name" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Log Level</label>
+
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.LOG_LEVEL_DESC" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Transaction Id</label>
+
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.transaction_ref_id" disabled>
+                                                </div>
+
+                                                <label class="col-md-3 control-label">Sub Transaction</label>
+
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.sub_transaction_id" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Log Message</label>
+
+                                                <div class="col-md-9">
+                                                    <textarea id="maxlength_textarea" class="form-control" rows="4"
+                                                              ng-model="logDetailsData.log_message" disabled></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Log By</label>
+
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.log_by" disabled>
+                                                </div>
+
+                                                <label class="col-md-3 control-label">Log Date</label>
+
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.log_datetime | date:'dd/MM/yyyy HH:mm:ss'"
+                                                           disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Source Ip</label>
+
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.source_ip" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Entry Level</label>
+
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control"
+                                                           ng-model="logDetailsData.log_entry_type" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-4 col-md-8">
+                                                    <button class="btn default" data-dismiss="modal" aria-hidden="true"
+                                                            ng-click="cancel()">Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+            <!-- BEGIN CORE PLUGINS -->
+            <!--[if lt IE 9]>
+            <script src="../../assets/global/plugins/respond.min.js"></script>
+            <script src="../../assets/global/plugins/excanvas.min.js"></script>
+            <![endif]-->
+            <script src="js/common/jquery_013.js" type="text/javascript"></script>
+            <script src="js/common/jquery-migrate.js" type="text/javascript"></script>
+            <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+            <script src="js/common/jquery-ui.js" type="text/javascript"></script>
+            <script src="js/common/bootstrap.js" type="text/javascript"></script>
+            <script src="js/common/bootstrap-hover-dropdown.js" type="text/javascript"></script>
+            <script src="js/common/jquery_006.js" type="text/javascript"></script>
+            <script src="js/common/jquery_014.js" type="text/javascript"></script>
+            <script src="js/common/jquery_003.js" type="text/javascript"></script>
+            <script src="js/common/jquery.js" type="text/javascript"></script>
+            <script src="js/common/bootstrap-switch.js" type="text/javascript"></script>
+            <!-- END CORE PLUGINS -->
+            <!-- BEGIN PAGE LEVEL PLUGINS -->
+            <script src="js/common/jquery_002.js" type="text/javascript"></script>
+            <script src="js/common/jquery_011.js" type="text/javascript"></script>
+            <script src="js/common/jquery_017.js" type="text/javascript"></script>
+            <script src="js/common/jquery_015.js" type="text/javascript"></script>
+            <script src="js/common/jquery_010.js" type="text/javascript"></script>
+            <script src="js/common/jquery_018.js" type="text/javascript"></script>
+            <script src="js/common/jquery_016.js" type="text/javascript"></script>
+            <script src="js/common/jquery_012.js" type="text/javascript"></script>
+            <script src="js/common/jquery_005.js" type="text/javascript"></script>
+            <script src="js/common/jquery_007.js" type="text/javascript"></script>
+            <script src="js/common/moment.js" type="text/javascript"></script>
+            <script src="js/common/daterangepicker.js" type="text/javascript"></script>
+            <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
+            <script src="js/common/fullcalendar.js" type="text/javascript"></script>
+            <script src="js/common/jquery_009.js" type="text/javascript"></script>
+            <script src="js/common/jquery_004.js" type="text/javascript"></script>
+            <!-- END PAGE LEVEL PLUGINS -->
+            <!-- BEGIN PAGE LEVEL SCRIPTS -->
+            <script src="js/common/metronic.js" type="text/javascript"></script>
+            <script src="js/common/layout.js" type="text/javascript"></script>
+            <script src="js/common/quick-sidebar.js" type="text/javascript"></script>
+            <script src="js/common/demo.js" type="text/javascript"></script>
+            <script src="js/common/index.js" type="text/javascript"></script>
+            <script src="js/common/tasks.js" type="text/javascript"></script>
+            <!-- END PAGE LEVEL SCRIPTS -->
+
+            <script src="js/assets/global/plugins/jquery-nestable/jquery.nestable.js"></script>
+            <script src="js/assets/admin/pages/scripts/ui-nestable.js"></script>
+            <script src="js/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+
+
+            <script type="text/javascript" src="js/assets/global/plugins/select2/select2.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+            <script type="text/javascript"
+                    src="js/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+            <script src="js/assets/admin/pages/scripts/table-managed.js"></script>
+            <script src="js/angular.min.js"></script>
+            <script src="js/angular.route.js"></script>
+            <script src="js/angular-ui-bootstrap.min.js"></script>
+            <script src="js/tradenet.js"></script>
+
+            <script src="js/c3.js" type="text/javascript"></script>
+            <script src="js/d3.min.js" type="text/javascript"></script>
+
+
+            <script>
+                jQuery(document).ready(function () {
+                    Metronic.init(); // init metronic core componets
+                    Layout.init(); // init layout
+                    QuickSidebar.init(); // init quick sidebar
+                    Demo.init(); // init demo features
+                    Index.init();
+                    Index.initDashboardDaterange();
+                    Index.initJQVMAP(); // init index page's custom scripts
+                    Index.initCalendar(); // init index page's custom scripts
+                    Index.initCharts(); // init index page's custom scripts
+                    Index.initChat();
+                    Index.initMiniCharts();
+                    Tasks.initDashboardWidget();
+                });
+            </script>
+            <!-- END JAVASCRIPTS -->
+
+
+            <div style="top: 83px; right: 20px; left: auto;"
+                 class="daterangepicker dropdown-menu opensleft show-calendar">
+                <div class="calendar left">
+                    <div class="calendar-date">
+                        <table class="table-condensed">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th class="prev available"><i class="fa fa-angle-left"></i></th>
+                                <th colspan="5" class="month">May 2015</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th class="week">W</th>
+                                <th>Mo</th>
+                                <th>Tu</th>
+                                <th>We</th>
+                                <th>Th</th>
+                                <th>Fr</th>
+                                <th>Sa</th>
+                                <th>Su</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="week">18</td>
+                                <td class="off disabled" data-title="r0c0">27</td>
+                                <td class="off disabled" data-title="r0c1">28</td>
+                                <td class="off disabled" data-title="r0c2">29</td>
+                                <td class="off disabled" data-title="r0c3">30</td>
+                                <td class="off disabled" data-title="r0c4">1</td>
+                                <td class="off disabled" data-title="r0c5">2</td>
+                                <td class="off disabled" data-title="r0c6">3</td>
+                            </tr>
+                            <tr>
+                                <td class="week">19</td>
+                                <td class="off disabled" data-title="r1c0">4</td>
+                                <td class="off disabled" data-title="r1c1">5</td>
+                                <td class="off disabled" data-title="r1c2">6</td>
+                                <td class="off disabled" data-title="r1c3">7</td>
+                                <td class="off disabled" data-title="r1c4">8</td>
+                                <td class="off disabled" data-title="r1c5">9</td>
+                                <td class="off disabled" data-title="r1c6">10</td>
+                            </tr>
+                            <tr>
+                                <td class="week">20</td>
+                                <td class="off disabled" data-title="r2c0">11</td>
+                                <td class="off disabled" data-title="r2c1">12</td>
+                                <td class="off disabled" data-title="r2c2">13</td>
+                                <td class="off disabled" data-title="r2c3">14</td>
+                                <td class="off disabled" data-title="r2c4">15</td>
+                                <td class="off disabled" data-title="r2c5">16</td>
+                                <td class="off disabled" data-title="r2c6">17</td>
+                            </tr>
+                            <tr>
+                                <td class="week">21</td>
+                                <td class="off disabled" data-title="r3c0">18</td>
+                                <td class="off disabled" data-title="r3c1">19</td>
+                                <td class="off disabled" data-title="r3c2">20</td>
+                                <td class="off disabled" data-title="r3c3">21</td>
+                                <td class="off disabled" data-title="r3c4">22</td>
+                                <td class="off disabled" data-title="r3c5">23</td>
+                                <td class="off disabled" data-title="r3c6">24</td>
+                            </tr>
+                            <tr>
+                                <td class="week">22</td>
+                                <td class="off disabled" data-title="r4c0">25</td>
+                                <td class="off disabled" data-title="r4c1">26</td>
+                                <td class="off disabled" data-title="r4c2">27</td>
+                                <td class="off disabled" data-title="r4c3">28</td>
+                                <td class="off disabled" data-title="r4c4">29</td>
+                                <td class="off disabled" data-title="r4c5">30</td>
+                                <td class="off disabled" data-title="r4c6">31</td>
+                            </tr>
+                            <tr>
+                                <td class="week">23</td>
+                                <td class="off disabled" data-title="r5c0">1</td>
+                                <td class="off disabled" data-title="r5c1">2</td>
+                                <td class="off disabled" data-title="r5c2">3</td>
+                                <td class="off disabled" data-title="r5c3">4</td>
+                                <td class="off disabled" data-title="r5c4">5</td>
+                                <td class="off disabled" data-title="r5c5">6</td>
+                                <td class="off disabled" data-title="r5c6">7</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+            <div class="jqvmap-label"></div>
+
+
+</body>
+<!-- END BODY --></html>

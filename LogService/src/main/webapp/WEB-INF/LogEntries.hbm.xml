@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 6, 2015 10:04:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.cl.hibernate.dao.LogEntries" table="log_entries" optimistic-lock="version" dynamic-insert="true">
+        <id name="logId" type="string">
+            <column name="log_id" length="100" />
+            <generator class="guid" />
+        </id>
+        <property name="appId" type="java.lang.Integer">
+            <column name="app_id" />
+        </property>
+        <property name="sourceIp" type="string">
+            <column name="source_ip" length="100" />
+        </property>
+        <property name="moduleName" type="string">
+            <column name="module_name" length="100" />
+        </property>
+        <property name="functionName" type="string">
+            <column name="function_name" length="100" />
+        </property>
+        <property name="transactionRefId" type="string">
+            <column name="transaction_ref_id" length="100" />
+        </property>
+        <property name="subTransactionId" type="string">
+            <column name="sub_transaction_id" length="100" />
+        </property>
+        <property name="logLevel" type="java.lang.Integer">
+            <column name="log_level" />
+        </property>
+        <property name="logDatetime" type="timestamp">
+            <column name="log_datetime" length="19" />
+        </property>
+        <property name="logBy" type="string">
+            <column name="log_by" length="100" />
+        </property>
+        <property name="logCreateddatetime" type="timestamp">
+            <column name="log_createddatetime" length="19" />
+        </property>
+        <property name="logEntryType" type="string">
+            <column name="log_entry_type" length="100" />
+        </property>
+        <property name="logMessage" type="string">
+            <column name="log_message" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

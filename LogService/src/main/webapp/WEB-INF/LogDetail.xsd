@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:tns="urn:crimsonlogic:tn:schema:xsd:LogService" 
+targetNamespace="urn:crimsonlogic:tn:schema:xsd:LogService" 
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="loggingService">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="appId" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="sourceIp" type="xs:string" />
+			<xs:element name="moduleName" type="xs:string" />
+			<xs:element name="functionName" type="xs:string" />
+			<xs:element name="transactionRefId" type="xs:string" />
+			<xs:element name="subTransactionRefId" type="xs:string" />
+			<xs:element name="logLevel" type="xs:integer" />
+			<xs:element name="logDateTime" type="xs:dateTime" />
+			<xs:element name="logBy" type="xs:string" />
+			<xs:element name="logMessage" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
+</xs:schema>
